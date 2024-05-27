@@ -42,6 +42,9 @@ public class Deck {
         }
     }
 
+    /**
+     * @param card
+     */
     @SuppressWarnings("unchecked")
     public void addCard(Card card) {
         deck.add(card);
