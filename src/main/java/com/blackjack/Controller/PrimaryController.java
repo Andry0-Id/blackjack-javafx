@@ -21,10 +21,14 @@ public class PrimaryController {
     Player player = new Player("test");
     Player dealer = new Player("croupier");
 
-    @FXML private HBox cardDealer; 
-    @FXML private HBox cardPlayer;
-    @FXML private HBox panePlayer;
-    @FXML private HBox paneDealer;
+    @FXML
+    private HBox cardDealer;
+    @FXML
+    private HBox cardPlayer;
+    @FXML
+    private HBox panePlayer;
+    @FXML
+    private HBox paneDealer;
 
     @FXML
     private void switchToStart() throws IOException {
@@ -32,24 +36,30 @@ public class PrimaryController {
     }
 
     @FXML
-    private void play(){
+    private void play() {
         Platform.runLater(() -> {
             System.out.println("Play");
-            for (int i = 0; i < 2; i++) { // Distribution de deux cartes au total
+            // * Distribute two card */
+            for (int i = 0; i < 2; i++) {
                 Card card1 = deck.dealCard();
                 Card card2 = deck.dealCard();
                 if (card1 != null && card2 != null) {
                     player.addCard(card2);
                     dealer.addCard(card1);
                 }
+
+                // * Test to show image
                 Image cardImage = card2.getCardImage();
                 System.out.println(card2.getCardImage());
                 ImageView imageView = new ImageView(cardImage);
                 cardDealer.getChildren().add(imageView);
-                Integer s = player.getScore(); 
+
+                // * Score player
+                Integer s = player.getScore();
                 Label scorep = new Label(s.toString());
-                scorep.applyCss();
                 panePlayer.getChildren().add(scorep);
+
+                // * Score dealer
                 Integer d = dealer.getScore();
                 Label scored = new Label(d.toString());
                 paneDealer.getChildren().add(scored);
@@ -70,9 +80,8 @@ public class PrimaryController {
         });
     }
 
-
     /**
-     * * Function : stand() 
+     * * Function : stand()
      * * Rester sur la main
      */
     @FXML
@@ -81,5 +90,5 @@ public class PrimaryController {
             System.out.println("Stand Activer");
         });
     }
-    
+
 }
