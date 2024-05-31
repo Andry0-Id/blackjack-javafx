@@ -46,9 +46,6 @@
             </children>
          </HBox>
          <HBox fx:id="cardPlayer" alignment="CENTER" prefHeight="132.0" prefWidth="403.0">
-            <children>
-
-            </children>
          </HBox>
       </VBox>
       <VBox alignment="CENTER" prefHeight="400.0" prefWidth="200.0" style="-fx-border-radius: 10 0 10 0; -fx-background-color: white;">

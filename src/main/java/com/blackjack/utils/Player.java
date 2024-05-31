@@ -46,7 +46,5 @@ public class Player {
         }
         main.add(card);
     }
-
     
-
 }

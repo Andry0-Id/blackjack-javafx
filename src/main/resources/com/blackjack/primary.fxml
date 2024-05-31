@@ -11,7 +11,7 @@
 <HBox alignment="CENTER" prefHeight="500.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.blackjack.Controller.PrimaryController">
    <children>
       <VBox alignment="CENTER" prefHeight="400.0" prefWidth="450.0" style="-fx-background-color: green;">
-         <HBox alignment="CENTER" prefHeight="48.0" prefWidth="419.0">
+         <HBox fx:id="paneDealer" alignment="CENTER" prefHeight="48.0" prefWidth="419.0">
             <children>
                <Label text="Croupier" textFill="WHITE">
                   <font>
@@ -26,14 +26,11 @@
                </Label>
             </children>
          </HBox>
-         <HBox alignment="CENTER" prefHeight="132.0" prefWidth="403.0">
-            <children>
-               <ImageView fx:id="monImageView" fitHeight="133.0" fitWidth="100" />
-            </children>
+         <HBox fx:id="cardDealer" alignment="CENTER" prefHeight="132.0" prefWidth="403.0">
          </HBox>
          <Separator opacity="0.0" orientation="VERTICAL" prefHeight="11.0" prefWidth="104.0" />
          <Separator blendMode="SOFT_LIGHT" cacheHint="SPEED" prefHeight="26.0" prefWidth="450.0" style="-fx-background-color: white;" />
-         <HBox alignment="CENTER" prefHeight="48.0" prefWidth="419.0">
+         <HBox fx:id="panePlayer" alignment="CENTER" prefHeight="48.0" prefWidth="419.0">
             <children>
                <Label text="Joueur" textFill="WHITE">
                   <font>
@@ -48,10 +45,7 @@
                </Label>
             </children>
          </HBox>
-         <HBox alignment="CENTER" prefHeight="132.0" prefWidth="403.0">
-            <children>
-               <ImageView fx:id="monImageView1" fitHeight="133.0" fitWidth="100" />
-            </children>
+         <HBox fx:id="cardPlayer" alignment="CENTER" prefHeight="132.0" prefWidth="403.0">
          </HBox>
       </VBox>
       <VBox alignment="CENTER" prefHeight="400.0" prefWidth="200.0" style="-fx-border-radius: 10 0 10 0; -fx-background-color: white;">

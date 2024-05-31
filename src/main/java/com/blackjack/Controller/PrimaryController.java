@@ -10,7 +10,6 @@ import com.blackjack.utils.Player;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 
@@ -35,6 +34,7 @@ public class PrimaryController {
         App.setRoot("start");
     }
 
+    @SuppressWarnings("static-access")
     @FXML
     private void play() {
         Platform.runLater(() -> {
@@ -46,25 +46,24 @@ public class PrimaryController {
                 if (card1 != null && card2 != null) {
                     player.addCard(card2);
                     dealer.addCard(card1);
+
+                    ImageView imageViewDealer = new ImageView(card1.getCardImage());
+                    ImageView imageViewPlayer = new ImageView(card2.getCardImage());
+                    cardDealer.getChildren().add(imageViewDealer);
+                    cardPlayer.getChildren().add(imageViewPlayer);
                 }
-
-                // * Test to show image
-                Image cardImage = card2.getCardImage();
-                System.out.println(card2.getCardImage());
-                ImageView imageView = new ImageView(cardImage);
-                cardDealer.getChildren().add(imageView);
-
-                // * Score player
-                Integer s = player.getScore();
-                Label scorep = new Label(s.toString());
-                panePlayer.getChildren().add(scorep);
-
-                // * Score dealer
-                Integer d = dealer.getScore();
-                Label scored = new Label(d.toString());
-                paneDealer.getChildren().add(scored);
             }
+            // * Score player
+            Integer s = player.getScore();
+            Label scorep = new Label(s.toString());
+            panePlayer.getChildren().add(scorep);
+
+            // * Score dealer
+            Integer d = dealer.getScore();
+            Label scored = new Label(d.toString());
+            paneDealer.getChildren().add(scored);
         });
+
     }
 
     /**
