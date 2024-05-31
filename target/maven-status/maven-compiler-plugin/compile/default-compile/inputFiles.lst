@@ -1,7 +1,9 @@
 /home/hackwall/project/dev/src/main/java/com/blackjack/App.java
 /home/hackwall/project/dev/src/main/java/com/blackjack/Controller/PrimaryController.java
 /home/hackwall/project/dev/src/main/java/com/blackjack/Controller/StartController.java
+/home/hackwall/project/dev/src/main/java/com/blackjack/utils/Blackjack.java
 /home/hackwall/project/dev/src/main/java/com/blackjack/utils/Card.java
 /home/hackwall/project/dev/src/main/java/com/blackjack/utils/Deck.java
+/home/hackwall/project/dev/src/main/java/com/blackjack/utils/Player.java
 /home/hackwall/project/dev/src/main/java/com/blackjack/utils/Rank.java
 /home/hackwall/project/dev/src/main/java/com/blackjack/utils/Suit.java

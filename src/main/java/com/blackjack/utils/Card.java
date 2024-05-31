@@ -20,7 +20,7 @@ public class Card {
     }
 
     public static String getFileName(Suit suit,Rank rank){
-        return "file:/home/hackwall/project/dev/src/main/resources/com/blackjack/cards/"+suit.getSymbol()+rank.getSymbol()+".gif";
+        return "file:src/main/resources/com/blackjack/cards/"+suit.getSymbol()+rank.getSymbol()+".gif";
     }
 
     public Suit getSuitValues() {
@@ -51,8 +51,8 @@ public class Card {
 
     @Override
     public String toString() {
-        return "Card [suitValues=" + suitValues + ", rankValues=" + rankValues + ", cardImage=" + cardImage + "]";
+        return "Carte :" + suitValues + "," + rankValues+ "]";
     }
 
-    
+
 }

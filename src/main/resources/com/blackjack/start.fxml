@@ -5,11 +5,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.blackjack.Controller.StartController">
+<HBox alignment="CENTER" prefHeight="550.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.blackjack.Controller.StartController">
    <children>
-      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="339.0" style="-fx-background-color: green;">
+      <VBox alignment="CENTER" prefHeight="550.0" prefWidth="450.0" style="-fx-background-color: green;">
          <children>
             <Label text="BlackJack" textFill="WHITE">
                <font>
@@ -18,23 +19,24 @@
             </Label>
          </children>
       </VBox>
-      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="264.0">
+      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="200.0">
          <children>
+            <Circle fill="#d7d7d7" radius="51.0" stroke="#ffffff00" strokeType="INSIDE" />
             <Label text="Nom du joueur">
                <font>
                   <Font name="System Italic" size="24.0" />
                </font>
             </Label>
-            <HBox alignment="CENTER" prefHeight="64.0" prefWidth="263.0">
+            <HBox alignment="CENTER" prefHeight="64.0" prefWidth="214.0">
                <children>
-                  <TextField prefWidth="244.0" style="-fx-max-width: 200;">
+                  <TextField prefHeight="37.0" prefWidth="179.0" style="-fx-max-width: 200;">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </TextField>
                </children>
             </HBox>
-            <Button mnemonicParsing="false" onAction="#switchToApp" style="-fx-max-width: 200; -fx-background-color: green; -fx-background-radius: 20;" text="Jouer" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#switchToApp" style="-fx-max-width: 180; -fx-background-color: green; -fx-background-radius: 20;" text="Jouer" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
