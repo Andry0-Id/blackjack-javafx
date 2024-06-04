@@ -19,7 +19,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("start"),  650, 550);
         stage.setMaxWidth(650);
-        stage.setMaxHeight(550);
+        stage.setMaxHeight(450);
         stage.setTitle("Blackjack");
         stage.setScene(scene);
         stage.show();

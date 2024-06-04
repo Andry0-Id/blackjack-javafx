@@ -33,6 +33,11 @@ public class Player {
         return main;
     }
 
+    public void reStart(){
+        main.clear();
+        score = 0;
+    }
+
     public void addCard(Card card) {
         score += card.getValue();
         if (card.getRankValues() == Rank.As) {

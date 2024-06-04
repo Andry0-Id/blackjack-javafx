@@ -37,6 +37,8 @@
                         }
                     }
                 }
+                // * Random Card
+                shuffle();
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
@@ -58,6 +60,10 @@
             return deck.size() - index;
         }
 
+        /**
+         * * Give card
+         * @return
+         */
         public Card dealCard() {
             if (index >= deck.size())
                 return null;
@@ -65,10 +71,17 @@
                 return (Card) deck.get(index++);
         }
 
+        /**
+         * * Random Card with bibliotheque `Collections`
+         */
         public void shuffle() {
             Collections.shuffle(deck);
         }
 
+        /**
+         * * Verify deck is not empty
+         * @return
+         */
         public boolean isEmpty() {
             if (index >= deck.size())
                 return true;

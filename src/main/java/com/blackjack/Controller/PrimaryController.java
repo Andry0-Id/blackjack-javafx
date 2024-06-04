@@ -9,6 +9,7 @@ import com.blackjack.utils.Player;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -21,6 +22,9 @@ public class PrimaryController {
     Player dealer = new Player("croupier");
 
     @FXML
+    private Button play;
+
+    @FXML
     private HBox cardDealer;
     @FXML
     private HBox cardPlayer;
@@ -30,38 +34,75 @@ public class PrimaryController {
     private HBox paneDealer;
 
     @FXML
+    private HBox state;
+
+    /**
+     * * Function to show Card
+     * @param player
+     * @param hBox
+     */
+    @FXML
+    public void showCard(Player player, HBox hBox) {
+        try {
+            Card card = deck.dealCard();
+            player.addCard(card);
+            ImageView imageView = new ImageView(card.getCardImage());
+            hBox.getChildren().add(imageView);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    /**
+     * * Show score player
+     * @param player
+     * @param h
+     */
+    @FXML
+    public void showScore(Player player,HBox h){
+        try {
+            Integer score = player.getScore();
+            Label scoLabel = new Label(score.toString());
+            h.getChildren().remove(scoLabel);
+            h.getChildren().add(scoLabel);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
+    public void showState(String stateMessage){
+        Label l = new Label(stateMessage);
+        state.getChildren().add(l);
+    }
+
+    /**
+     * * Controller to return the principal window
+     * @throws IOException
+     */
+    @FXML
     private void switchToStart() throws IOException {
         App.setRoot("start");
     }
 
-    @SuppressWarnings("static-access")
     @FXML
     private void play() {
         Platform.runLater(() -> {
             System.out.println("Play");
-            // * Distribute two card */
-            for (int i = 0; i < 2; i++) {
-                Card card1 = deck.dealCard();
-                Card card2 = deck.dealCard();
-                if (card1 != null && card2 != null) {
-                    player.addCard(card2);
-                    dealer.addCard(card1);
+            player.reStart();
+            dealer.reStart();
+            cardDealer.getChildren().removeAll(cardDealer.getChildren());
+            cardPlayer.getChildren().removeAll(cardPlayer.getChildren());
+            showCard(player, cardPlayer);
+            showCard(dealer, cardDealer);
+            showCard(player, cardPlayer);
 
-                    ImageView imageViewDealer = new ImageView(card1.getCardImage());
-                    ImageView imageViewPlayer = new ImageView(card2.getCardImage());
-                    cardDealer.getChildren().add(imageViewDealer);
-                    cardPlayer.getChildren().add(imageViewPlayer);
-                }
-            }
             // * Score player
-            Integer s = player.getScore();
-            Label scorep = new Label(s.toString());
-            panePlayer.getChildren().add(scorep);
+            showScore(player, panePlayer);
 
             // * Score dealer
-            Integer d = dealer.getScore();
-            Label scored = new Label(d.toString());
-            paneDealer.getChildren().add(scored);
+            showScore(dealer, paneDealer);
+
         });
 
     }
@@ -75,6 +116,9 @@ public class PrimaryController {
         Platform.runLater(() -> {
             Platform.runLater(() -> {
                 System.out.println("Hit Activer");
+                Card card2 = deck.dealCard();
+                player.addCard(card2);
+                System.out.println(player.getMain());
             });
         });
     }
@@ -87,6 +131,19 @@ public class PrimaryController {
     protected void stand() {
         Platform.runLater(() -> {
             System.out.println("Stand Activer");
+            showCard(dealer, cardDealer);
+            while (dealer.getScore() < 17) {
+                showCard(dealer, cardDealer);
+            }
+            if (player.getScore() <= 21) {
+                if (player.getScore() < dealer.getScore()) {
+                    showState("You WON ;)");
+                }else{
+                    showState("You LOSE |)");
+                }
+            }
+            showScore(dealer, paneDealer);
+            showScore(player, panePlayer);
         });
     }
 
