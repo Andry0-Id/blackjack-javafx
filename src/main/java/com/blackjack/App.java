@@ -17,7 +17,8 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("start"),  650, 550);
+        scene = new Scene(loadFXML("start"),  650, 600);
+        scene.getStylesheets().add(App.class.getResource("css/style.css").toString());
         stage.setMaxWidth(650);
         stage.setMaxHeight(450);
         stage.setTitle("Blackjack");

@@ -62,9 +62,13 @@ public class PrimaryController {
     public void showScore(Player player,HBox h){
         try {
             Integer score = player.getScore();
-            Label scoLabel = new Label(score.toString());
-            h.getChildren().remove(scoLabel);
-            h.getChildren().add(scoLabel);
+            Label scoreLabel = new Label(score.toString());
+
+            // !! Don't remove Label
+            // ?? Why
+            h.getChildren().remove(scoreLabel);
+
+            h.getChildren().add(scoreLabel);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -116,9 +120,7 @@ public class PrimaryController {
         Platform.runLater(() -> {
             Platform.runLater(() -> {
                 System.out.println("Hit Activer");
-                Card card2 = deck.dealCard();
-                player.addCard(card2);
-                System.out.println(player.getMain());
+                showCard(player, cardPlayer);
             });
         });
     }

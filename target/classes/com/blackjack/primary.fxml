@@ -18,7 +18,7 @@
                   </font>
                </Label>
                <Separator opacity="0.0" prefHeight="21.0" prefWidth="200.0" />
-               <Label text="Score: " textFill="WHITE">
+               <Label fx:id="scoreLabel" text="Score: " textFill="WHITE">
                   <font>
                      <Font name="Victor Mono Medium Italic" size="16.0" />
                   </font>
@@ -57,20 +57,20 @@
       </VBox>
       <VBox alignment="CENTER" prefHeight="400.0" prefWidth="200.0" style="-fx-border-radius: 10 0 10 0; -fx-background-color: green;">
          <children>
-            <Button fx:id="play" mnemonicParsing="false" onAction="#play" style="-fx-background-color: black; -fx-pref-width: 150; -fx-pref-height: 40;" text="Play" textFill="WHITE">
+            <Button fx:id="play" mnemonicParsing="false" onAction="#play" style="-fx-background-color: black; -fx-pref-width: 150; -fx-pref-height: 40; -fx-background-radius: 20;" text="Play" textFill="WHITE">
                <font>
                   <Font name="Victor Mono Medium Italic" size="16.0" />
                </font>
             </Button>
             <HBox alignment="CENTER" prefHeight="69.0" prefWidth="190.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#hit" style="-fx-background-color: red; -fx-pref-width: 70; -fx-pref-height: 40;" text="Hit" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#hit" style="-fx-background-color: red; -fx-pref-width: 70; -fx-pref-height: 40; -fx-background-radius: 20;" text="Hit" textFill="WHITE">
                      <font>
                         <Font name="Victor Mono Medium Italic" size="16.0" />
                      </font>
                   </Button>
                   <Separator opacity="0.0" prefHeight="27.0" prefWidth="0.0" />
-                  <Button mnemonicParsing="false" onAction="#stand" style="-fx-background-color: orange; -fx-pref-width: 70; -fx-pref-height: 40;" text="Stand">
+                  <Button mnemonicParsing="false" onAction="#stand" style="-fx-background-color: orange; -fx-pref-width: 70; -fx-pref-height: 40; -fx-background-radius: 20;" text="Stand">
                      <font>
                         <Font name="Victor Mono Medium Italic" size="16.0" />
                      </font>

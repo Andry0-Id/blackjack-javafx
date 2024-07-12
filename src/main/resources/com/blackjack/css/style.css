@@ -1,3 +1,17 @@
 .label{
     -fx-font-family: 'Victor Mono Medium Italic';
+    -fx-font-size: 15;
+    -fx-text-fill: "white";
+}
+
+#title{
+    -fx-font-family: 'Victor Mono Medium';
+    -fx-font-size: 35;
+}
+
+#nameplayer{
+    -fx-font-family: 'Victor Mono Medium';
+    -fx-font-weight: 800;
+    -fx-text-fill: "black";
+    -fx-font-size: 20;
 }
