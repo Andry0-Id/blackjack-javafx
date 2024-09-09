@@ -74,6 +74,10 @@ public class PrimaryController {
         }
     }
 
+    /**
+     * * Show the state if you lose | bust | win
+     * @param stateMessage
+     */
     @FXML
     public void showState(String stateMessage){
         Label l = new Label(stateMessage);
@@ -89,6 +93,9 @@ public class PrimaryController {
         App.setRoot("start");
     }
 
+    /**
+     * * Function to start the game
+     */
     @FXML
     private void play() {
         Platform.runLater(() -> {
