@@ -66,7 +66,7 @@ public class PrimaryController {
 
             // !! Don't remove Label
             // ?? Why
-            h.getChildren().remove(scoreLabel);
+            h.getChildren().clear();
 
             h.getChildren().add(scoreLabel);
         } catch (Exception e) {
@@ -139,10 +139,14 @@ public class PrimaryController {
             }
             if (player.getScore() <= 21) {
                 if (player.getScore() < dealer.getScore()) {
-                    showState("You WON ;)");
-                }else{
+                    showState("You WIN ;)");
+                }else if ( player.getScore() < dealer.getScore() ){
                     showState("You LOSE |)");
+                }else{
+                    showState("PUSH");
                 }
+            }else{
+                showState("You bust");
             }
             showScore(dealer, paneDealer);
             showScore(player, panePlayer);

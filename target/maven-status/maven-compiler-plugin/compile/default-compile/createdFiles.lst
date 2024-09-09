@@ -1,8 +1,0 @@
-com/blackjack/App.class
-com/blackjack/Controller/StartController.class
-com/blackjack/utils/Rank.class
-com/blackjack/utils/Suit.class
-com/blackjack/utils/Deck.class
-com/blackjack/utils/Player.class
-com/blackjack/Controller/PrimaryController.class
-com/blackjack/utils/Card.class

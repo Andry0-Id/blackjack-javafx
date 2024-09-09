@@ -1,8 +1,8 @@
-/home/project/project/dev/src/main/java/com/blackjack/App.java
-/home/project/project/dev/src/main/java/com/blackjack/Controller/PrimaryController.java
-/home/project/project/dev/src/main/java/com/blackjack/Controller/StartController.java
-/home/project/project/dev/src/main/java/com/blackjack/utils/Card.java
-/home/project/project/dev/src/main/java/com/blackjack/utils/Deck.java
-/home/project/project/dev/src/main/java/com/blackjack/utils/Player.java
-/home/project/project/dev/src/main/java/com/blackjack/utils/Rank.java
-/home/project/project/dev/src/main/java/com/blackjack/utils/Suit.java
+/home/project/project/blackjack-javafx/src/main/java/com/blackjack/App.java
+/home/project/project/blackjack-javafx/src/main/java/com/blackjack/Controller/PrimaryController.java
+/home/project/project/blackjack-javafx/src/main/java/com/blackjack/Controller/StartController.java
+/home/project/project/blackjack-javafx/src/main/java/com/blackjack/utils/Card.java
+/home/project/project/blackjack-javafx/src/main/java/com/blackjack/utils/Deck.java
+/home/project/project/blackjack-javafx/src/main/java/com/blackjack/utils/Player.java
+/home/project/project/blackjack-javafx/src/main/java/com/blackjack/utils/Rank.java
+/home/project/project/blackjack-javafx/src/main/java/com/blackjack/utils/Suit.java
